@@ -1,0 +1,17 @@
+{
+  "name": "json_project",
+  "version": "1.0.0",
+  "description": "first_json_proj",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "json_pro"
+  ],
+  "author": "Debayon Mallik",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}

@@ -1,0 +1,300 @@
+undefined/null
+single thread language
+
+/non primitive:-objects, array/
+
+NUMBERS
+{
+bigint: var num=123n
+NaN(not a number) but its data-type is number
+null(bug)see its type
+}
+
+SYMBOLS{
+var x=Symbol()  ..(S not s)
+}
+
+/primitive:-string ,number, symbol, bool/ 
+
+
+/OPERATORS/
+5^6 = 5**6
+
+/type coercion/
+(two value of diff datatype can be compared WITH OUT ASCII)
+LOOSE EQUALITY (2=='2') return true;
+here first string '2' gets converted to (int) 2 ,inbilt stoi() is done here
+
+without type coercion
+STRICT EQUALITY (2==='2') return false (based on type comparison is done)
+
+
+DAY 2
+
+js is not a typed language(type script)
+for horizontal printing use console.log(a,b,c) its like <<  in c++
+
+DIFF BTW JS AND CPP
+in js each line gets compiled at a time.(until error is caught ,the above part of the code will get executed)
+in cpp whole code first get compiled.(if error is found ,nothing will get executed)
+
+redefinition of variable is allowed 
+ var a=87; 
+ var a=0;
+but not in let or const
+
+
+
+ARRAY
+arr.length (not arr.length() or arr.size())
+
+arr.unshift(4) (adds 4 to first index)
+
+even with constant array we can modify,add, unshift the array
+but cant use that same name to store different variable
+
+{in both forof and foreach loop ele is a new variable, any operations performed on ele will not be reflected in actual array}
+forof loop(actual element cant be modified, but can only print)
+
+foreach loop(element,index,array)
+
+LOOPS
+truthy ,falsy condition
+
+
+STRING FUNCTION
+.all manipulated strings are stored in new string ,not in the original string
+. st.length  (only function which dsnt required brackets)
+.s2=s.substring(0,3) or slice last idx not included
+.split to convert it to array
+.`xyz...${}...abc` template_literal(back_tick)
+
+
+OBJECT
+
+key:value.
+keys also can be initialized as string.
+key are stored as string.
+
+console.log(obj["key"]) pass the string of key NOT only the key
+/* obj.key = obj['key'] */
+
+for in loop for object
+
+for (const i in obj) {
+  console.log(i,obj[i])
+}
+
+
+FUNCTIONS
+random numbers(0-1) 0,1 not included
+
+RANDOM( hw generate randow 'int' btw -10 and 10,-20 and 20,-30 and 30.... )hint see the range then divide
+
+floor(building floor so lower plane)
+ceil(building ceiling so upper plane)
+
+*CALL BACK FUNCTION*(dont pass any argument)
+passing a whole function to a function
+eg: setTimeout(func1,x*1000)[dont pass function like func1()]
+    setTimeout(func2,y*1000)
+from milise to sec so *1000
+time is independent of function ,only dependent on the instance of clicking run button.
+eg:-
+for(let i=1;i<=10;i++)
+    {
+        setTimeout(function(ele){ele=7;console.log(ele+i)},i*1000); //i is local variable
+    }
+
+
+DAY 3
+.map  arr1=arr.map(x=>x/2 ) all elements in arr1=arr/2
+.filter arr1=arr.filter( x=>condition ) only satisfying condition will get in arr1
+
+Day 4
+Object.key
+Object values
+Object.entries
+Object.assign
+de-structuring in js
+ .higher-order func in js (call back func, retun func)
+ {
+   k.map(arrow func)  // map is func , its parameters is also a func (arrow)
+  k.filter(arrow func)
+  r.reduce
+   } 
+
+. ASYNCHRONOUS RUNNING(setTimeout)
+  call_stack(all sync,asynch stores here)
+  web_APIS(for asyn functions)
+  Event loop(manage)
+  task queue.(asynch functions after completion stays)
+LEARNING [
+
+func(a,f){ lets say f is a function
+
+}
+
+func(){
+}
+
+var k=func(a,func) // 2nd func is passed not the value inside the funt is passed
+var m=func(a,func()) // value or returned value of func 2 is passed
+]  
+
+promise are used to perform read , processing the data from data base, with asynch programming
+
+Promise.all().then().catch() AND-GATE
+Promise.any().then().catch() OR-GATE
+
+DAY 5
+try{}catch(name){}// error handling
+
+file reading 'utf8' //unique code transformation format
+Just be aware that ports in the 49152-65535 range are usually safe for temporary or dynamic use.
+3000safe
+
+DAY 6(MONGODB INTERVIEW)
+MONGO_DB(noSQL) OVER RDBMS:-
+1 flexible schema 
+2  support geospatial index
+3. horizontal scalability(performance dsnt gets hampered on increasing data)
+
+DATA_BASE->COLLECTION(TABLE,[])->DOCUMNET(ROWS,{})->FIELDS(COLUMNS,:).
+
+horizontal scaling(buying more laptops and connected though a node,SCALE-OUT),
+vertical scaling (buying ssd,ram,and adding to that laptop,SCALE-UP)
+so there is a limit up to which we can verical scale,but there is as such no constrains in horizontal scaling.
+
+SO MONGO_DB IS SCALABLE : 1 data sharding(big data broken into chunks),and connected horizontally 
+                          2 replica set(replica of data)
+
+BSON(binary-jSON) : support more datatype than json, fast as the data in already in binary so no need to convert.
+in momgoDB max file size is 16mb(fact) 
+
+RELATIONSHIP:- 1 embedded(big size, used in transaction,fast), 
+               2 reference(small size,quiery is slower as it has to gets referenced,)
+
+DAY 7
+show databases
+if nothing is inside database it will not show that database.
+CRUD(create read update deletes)
+show dbs
+show collections
+first_=name of collection
+db.first_.insertOne
+db.first_.find().sort({name:1})
+
+https://gist.github.com/RitRa/5bb35b46f35752f93014ce7c8dc09020 :- practice queries
+
+DAY 8
+API(SOAP,REST)
+SOAP_XML(extensible markup laguage) :-
+ ADV:- can connect servers written in diff_lang(through libraries)(1.c++,2.python)
+ DAV:- slow bacz of XML, stores un-necessary Meta Data ,with Actual data. reading though it takes Time.
+
+REST(Representation State Transfer):- 
+
+SSD (Raw Binary Data)
+       ↓
+   Database (BSON)
+       ↓
+    Backend (.JS)
+       ↓
+   Frontend (Table)
+As We Can See The Representation Of Data is Getting Transformed , hence called state transfer  
+CRUD Operation On RestEndPoints.
+URI
+
+POST,PUT,DELETE,GET(HTTP verbs)
+REST= http verbs+ URI +(path/query param)
+Path Parameter,QUERY Parameter.
+
+INTERVIEW (IDEMPOTENT):-
+Performing A Task N number Of Time Will Result In Same Out Come(Stable) .
+IDEMPOTENT:- idem= same
+ 	     potent=Powerfull.
+in mathametics A U A = A  , even after performing this operation N number of times.
+.GET,PUT,DELETE (IDEMPOTENT)
+.POST(NON-IDEMPOTENT)				
+
+why Express ,and not Node.js in web-application
+:-fig out yourself
+
+DAY 9
+Authentication :- It verifies the identity of a user.
+Authorization :- grants or denies access of user to specific Resources.
+Basic Auth(earlier used)
+Access Tokens(now) and Time to live
+
+Mongoose:(lib of node.js)
+module to connect js to mongodb using .js language
+
+connection to mongodb database:
+1 .give_location
+2 .connect to the location
+3 .check is error 
+
+START PROJECT:-
+Router(receptionist)
+Controller(waiter)
+Model(cook)// define the schema here
+
+Model(Schema)
+1.define schema 
+2. give name to schema
+
+
+
+.model(inmongoose)
+
+1ST DEC_(AFTER ENDSEM)
+immutable:true(can't be changed).
+Date.now()+5.5*60*60*1000     (FOR IST in ms)
+
+.TIMESTAMP(added or modified to keep a note on USER activity)
+in schems(
+{name:string 
+ roll:num
+  },{timestamp:true , versionKey:false})
+
+3rd -dec
+A )find max marks;-
+1. var k = await model.findOne().sort({marks:-1})// max student info
+2. var max= k.marks;// max marks
+3. var topper= awIT.model.find({marks:max}).// search the toppers
+
+B) find avg :- aggregate([{$match:{}},{$group:{average:{$avg:"$marks"}}}])      (remember "&")
+
+FINAL--------------------------------------------------------------------------------------------------------
+
+
+project:-
+  modules:-
+  mongoose 
+  express
+  json webtokens
+  bcryptjs
+
+bcryptjs.hashSync("abcd",8)     8 = salt(hashing complexity) {to hide password}
+
+api request= method               -serverLocation-                          path 
+                          |                                    |                                          |                    
+                       GET          https://library-api.postmanlabs.com/books
+
+controller:-
+req.body (contains the json body)
+res.status(201).send(created_obj)   2xx,3xx,4xx,5xx{ in postman green box on right lower corner 200 OK}
+
+MIDDLEWARE(by using app.use()):-1.in btw route and controller(MORE OPTIMIZED)
+			 2.or  in the index.js file only(but then those middleware will be applicable for all methods GET,POST,PUT,DLT)
+middlewire(req,res,next){}
+app.use(middleware);
+
+->must consider[SPECIFICALLY SHOW THE ERROR IN POSTMAN , by using middleware]                                                                   1) if same userId .2) if written some thing other than ADMIN or CUSTOMER 
+
+
+// CONFUSED WHY WE USE APP?;- its just a instace of express.js
+app is Just a instance to handle HTTP requests(get,post,put,delete)
+
+1.use try catch while using .create and uploading to dbs, bcz there are chances of network error,serverdown etc

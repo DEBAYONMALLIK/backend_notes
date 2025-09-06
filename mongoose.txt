@@ -1,0 +1,11 @@
+store 'mongoose' in  a variable mongoose (object)
+
+1.First Connect It To mongodb 
+2. create the SCHEMA , Store it in a var 
+3. Pass that Schema ,into MODEL
+4. create a var(user) to store user
+5. user.create({})
+6.user.findByIdAndUpdate({})
+7.advised to use async {and try catch}
+
+perform CRUD

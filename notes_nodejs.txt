@@ -1,0 +1,51 @@
+NPM(node package manager)(helps to install diff library for projects)
+
+
+with in a folder
+//cd name_of_folder//
+//npm init//
+// npm install express//
+largest code repository 
+
++------------------+
+|  calculator(3, 4)|
++------------------+
+|   a = 3          |
+|   b = 4          |
+|                  |
+|   +-------------+|     
+|   |     calc    ||   <-- This is the function being returned
+|   +-------------+|     
+|   | add()       ||   <-- Method: add
+|   | multiply()  ||   <-- Method: multiply
+|   +-------------+|     
++------------------+
+
+function calculator(a, b) {
+    // Define the main calculator function, which can perform calculations
+    const calc = function() {
+        // This function could be used to perform a default action if needed
+        // For this example, we won't implement any specific logic here.
+    };
+
+    // Add methods directly to calc
+    calc.add = function() {
+        return a + b;  // Return the sum of a and b
+    };
+
+    calc.multiply = function() {
+        return a * b;  // Return the product of a and b
+    };
+
+    // Return the calculator function (which also has methods)
+    return calc;
+}
+
+// Example usage
+const calc = calculator(3, 4);
+
+console.log(calc.add());       // Outputs: 7
+console.log(calc.multiply());  // Outputs: 12
+
+install bcryptjs (encrypt the password)
+enum=enumurator[check though list]

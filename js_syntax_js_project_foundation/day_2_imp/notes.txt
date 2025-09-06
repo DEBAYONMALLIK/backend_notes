@@ -1,0 +1,6 @@
+1.argument objects
+2.IIFE(interview)
+  . function with no name(anonymous function )
+  . executes at the time of declaration.
+3. Hoisting in js(var,let,const)
+4.assign

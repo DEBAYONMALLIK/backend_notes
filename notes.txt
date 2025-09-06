@@ -1,0 +1,14 @@
+DAY1
+select a tag in js :-
+.let k1=document.querySelectorAll("h1"); // h1 is the tag name ,
+now k1 has h1 tag inside it=> we can manipulate h1 using k1 
+. if more than one h1 then select like k1[0],k1[1]...
+. k1.innerhtml=" "
+. eventlistner
+.mouseenter,mouseleave,click
+
+=LEARNING{
+     ->var k= decument.getelementbyid(); //GET THE DIV IN JS
+     ->k.style.color/bg="xyz";  // APPLY STYLE USING JS
+     ->k.addeventlister("mouseaction",function(){}); // MOUSEACTION ON DIVS
+}
